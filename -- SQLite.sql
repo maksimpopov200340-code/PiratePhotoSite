@@ -1,0 +1,80 @@
+-- SQLite
+-- INSERT INTO NEWS(news_lable, content, age) 
+-- VALUES  ('Технологии', 'Новый смартфон представлен', 15),
+--     ('Наука', 'Открыта новая планета', 7),
+--     ('Экономика', 'Курс валют вырос', 40),
+--     ('Спорт', 'Хоккейный матч перенесен', 5);
+-- SELECT * FROM NEWS;
+-- CREATE TABLE USERS(
+-- id INTEGER UNIQUE PRIMARY KEY,
+-- name VARCHAR(15) UNIQUE NOT NULL,
+-- created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+-- password TEXT NOT NULL
+-- );
+
+-- CREATE TABLE POSTS(
+-- id INTEGER UNIQUE PRIMARY KEY,
+-- title VARCHAR(40) NOT NULL,
+-- description TEXT,
+-- user_id INTEGER NOT NULL,
+-- created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+-- FOREIGN KEY(user_id) REFERENCES USERS(id)
+-- );
+
+-- CREATE TABLE COMMENTS(
+-- id INTEGER UNIQUE PRIMARY KEY,
+-- desc_com VARCHAR(50) NOT NULL,
+-- user_id INTEGER NOT NULL,
+-- post_id INTEGER NOT NULL,
+-- created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+-- FOREIGN KEY(user_id) REFERENCES USERS(id),
+-- FOREIGN KEY(post_id) REFERENCES POSTS(id) 
+-- );
+
+INSERT INTO USERS (name, password) VALUES 
+('alex_smith', 'pass123456'),
+('maria_johnson', 'secure789'),
+('ivan_petrov', 'qwerty123'),
+('elena_wilson', 'mypass456'),
+('dmitry_lee', 'hello7890');
+
+-- INSERT INTO POSTS (title, description, user_id) VALUES 
+-- ('Введение в SQLite', 'Полезные советы для начинающих по работе с SQLite базами данных', 1),
+-- ('Как учить программирование', 'Эффективные методы и ресурсы для изучения кодинга', 2),
+-- ('Мой первый проект', 'История создания моего первого веб-приложения', 3),
+-- ('Советы по продуктивности', 'Как организовать рабочий день и успевать больше', 4),
+-- ('Обзор новых технологий', 'Тренды в разработке ПО на 2026 год', 5);
+
+-- INSERT INTO COMMENTS (desc_com, user_id, post_id) VALUES 
+-- -- Комментарии к посту 1 (5 комментариев)
+-- ('Отличная статья! Спасибо', 2, 1),
+-- ('Очень помогло в работе', 3, 1),
+-- ('А есть примеры кода?', 4, 1),
+-- ('Полезно, добавил в закладки', 5, 1),
+-- ('Наконец-то понял эту тему', 1, 1),
+
+-- -- Комментарии к посту 2 (4 комментария)
+-- ('Спасибо за мотивацию', 1, 2),
+-- ('Метод 5 часов в день работает', 3, 2),
+-- ('Какие курсы посоветуете?', 4, 2),
+-- ('Практика - ключ к успеху', 5, 2),
+
+-- -- Комментарии к посту 3 (4 комментария)
+-- ('Крутой опыт!', 2, 3),
+-- ('Тоже через такое проходил', 4, 3),
+-- ('Интересно, а сколько времени заняло?', 5, 3),
+-- ('Вдохновляющая история', 1, 3),
+
+-- -- Комментарии к посту 4 (4 комментария)
+-- ('Метод помидора топ', 2, 4),
+-- ('А как бороться с прокрастинацией?', 3, 4),
+-- ('Согласен с каждым пунктом', 5, 4),
+-- ('Попробую применить на работе', 1, 4),
+
+-- -- Комментарии к посту 5 (3 комментария)
+-- ('Жду продолжения!', 2, 5),
+-- ('Кратко и по делу', 3, 5),
+-- ('Расскажите подробнее про AI', 4, 5);
+
+-- SELECT * FROM COMMENTS
+-- WHERE user_id = 1;
