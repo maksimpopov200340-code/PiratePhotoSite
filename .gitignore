@@ -216,3 +216,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project data
+data/*.db
+data/**/*.db
+data/*.sqlite3
+data/**/*.sqlite3
+.runtime/
+
+# Uploaded media
+media/*
+!media/.gitkeep
+!media/posts/
+media/posts/*
+!media/posts/.gitkeep
+
+# Future frontend
+frontend/node_modules/
+frontend/dist/
